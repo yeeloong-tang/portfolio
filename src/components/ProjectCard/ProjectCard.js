@@ -10,14 +10,14 @@ export default function ProjectCard({
 }) {
   return (
     <Link
-      class="projectCard block px-2.5 py-3.5 rounded-lg hover:bg-hover transition duration-200 group"
+      className="projectCard block px-2.5 py-3.5 rounded-lg hover:bg-gray-100 focus:bg-gray-100 transition duration-200 group"
       href={link}
     >
-      <div className="imageContainer overflow-hidden rounded-md w-full h-auto object-cover group-hover: drop-shadow-sm">
-        <img src={cover} />
+      <div className="imageContainer overflow-hidden rounded-md w-full h-auto object-cover group-hover:drop-shadow-sm">
+        <img src={cover} alt={name} />
       </div>
 
-      <div class="group-hover:translate-x-3 transition pt-1.5">
+      <div className="group-hover:translate-x-3 transition pt-1.5">
         <h2>{name}</h2>
         <p>{role}</p>
         <p>{year} &#8599;</p>

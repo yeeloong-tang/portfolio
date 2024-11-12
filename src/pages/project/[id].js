@@ -22,13 +22,22 @@ export async function getStaticProps({ params }) {
   };
 }
 
+// Project component starts
 export default function Project({ meta, content }) {
   return (
     <div>
-      <h1>{meta.name}</h1>
+      <h1>Name: {meta.name}</h1>
       <div>role: {meta.role}</div>
       <div>{meta.year}</div>
-      <MDXRemote {...content} />
+      <MDXRemote {...content} components={{ h1: H1Component, p: PComponent }} />
     </div>
   );
 }
+
+const H1Component = ({ children }) => {
+  return <h1 className="text-4xl font-bold">{children}</h1>;
+};
+
+const PComponent = ({ children }) => {
+  return <p className="text-lg">{children}</p>;
+};
